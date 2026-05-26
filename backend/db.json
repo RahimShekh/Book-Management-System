@@ -1,0 +1,53 @@
+{
+  "books": [
+    {
+      "image": "https://cdn.shopify.com/s/files/1/0070/1884/0133/t/8/assets/pf-71b40b91--Books.jpg?v=1620061288",
+      "title": "On the Origin of Species",
+      "author": "Charles Darwin",
+      "genre": "Scientific Literature",
+      "year": "2021",
+      "id": "se2-hXewDnc"
+    },
+    {
+      "image": "https://cdn.shopify.com/s/files/1/0070/1884/0133/t/8/assets/pf-b40b918a--Books2.jpg?v=1620061349",
+      "title": "The Great Gatsby",
+      "author": "F SCOTT FITZGERALD",
+      "genre": "Novel",
+      "year": "1999",
+      "id": "22rqswTMvZw"
+    },
+    {
+      "image": "https://cdn.shopify.com/s/files/1/0070/1884/0133/t/8/assets/pf-0b918a84--Books3.jpg?v=1620061361",
+      "title": "The Catcher In The Rye",
+      "author": "J.D. SALINGER",
+      "genre": "Novel",
+      "year": "1995",
+      "id": "tXGK8EVdLqk"
+    },
+    {
+      "image": "https://cdn.shopify.com/s/files/1/0070/1884/0133/t/8/assets/pf-918a8430--Books4.jpg?v=1620061368",
+      "title": "1984",
+      "author": " GEORGE ORWELL",
+      "genre": "Dystopian social science fiction",
+      "year": "2000",
+      "id": "Zw4QsuJ-EDw"
+    },
+    {
+      "image": "https://cdn.shopify.com/s/files/1/0070/1884/0133/t/8/assets/pf-8a8430b5--Books5.jpg?v=1620061376",
+      "title": " Lord Of The Rings Trilogy",
+      "author": " J.R.R. TOLKIEN",
+      "genre": "Fantasy Novel",
+      "year": "2001",
+      "id": "8rLNxCrPkeg"
+    },
+    {
+      "image": "https://cdn.shopify.com/s/files/1/0070/1884/0133/t/8/assets/pf-30b57dac--Books7.jpg?v=1620061394",
+      "title": "War And Peace",
+      "author": " LEO TOLSTOY",
+      "genre": "Poem",
+      "year": "2006",
+      "id": "yfLjutBdrgM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
