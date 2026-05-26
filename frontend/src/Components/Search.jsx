@@ -20,7 +20,6 @@ function Search() {
         if (e.key === "Enter") handleSearch()
     }
 
-    // Clear search and go home
     const handleBack = () => {
         setSearch("")
         setInput("")
@@ -29,8 +28,6 @@ function Search() {
 
     return (
         <div className="flex items-center gap-2 w-full max-w-xl">
-
-            {/* Only show the Back button when user has searched something */}
             {search && (
                 <button
                     onClick={handleBack}

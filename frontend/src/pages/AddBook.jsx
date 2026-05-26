@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { toast, Bounce } from 'react-toastify'
@@ -8,25 +8,21 @@ function AddBook() {
 
     const navigate = useNavigate()
     const { data, setData } = useContext(BookContext)
-
-    // register = connects input to the form, handleSubmit = runs on submit, reset = clears form, formState = gives us errors
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
 
     const SubmitHandler = async (book) => {
-        // Send new book to the server
-        const res = await fetch("http://localhost:3001/books", {
+        const res = await fetch("https://book-management-system-wrur.onrender.com/books", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(book)
         })
         const newBook = await res.json()
 
-        // Add the new book to our existing list
         setData([...data, newBook])
 
         toast.success("Book Added!", { transition: Bounce })
-        reset()       // clear the form fields
-        navigate("/") // go back to home page
+        reset()       
+        navigate("/") 
     }
 
     return (
@@ -37,16 +33,12 @@ function AddBook() {
             >
 
                 <h1 className='text-4xl font-bold text-center mb-8 text-gray-800'>Add New Book</h1>
-
-                {/* Book Cover URL — optional field */}
                 <input
                     className='border-b border-gray-500 outline-0 p-3 block w-full mb-5 bg-transparent'
                     {...register("image")}
                     type="url"
                     placeholder='Book Cover URL (optional)'
                 />
-
-                {/* Title — required */}
                 <input
                     className='border-b border-gray-500 outline-0 p-3 block w-full mb-1 bg-transparent'
                     {...register("title", { required: "Title is required" })}
@@ -54,8 +46,6 @@ function AddBook() {
                     placeholder='Book Title'
                 />
                 {errors.title && <small className='text-red-500 mb-4 block'>{errors.title.message}</small>}
-
-                {/* Author — required */}
                 <input
                     className='border-b border-gray-500 outline-0 p-3 block w-full mb-1 bg-transparent mt-4'
                     {...register("author", { required: "Author is required" })}
@@ -64,7 +54,6 @@ function AddBook() {
                 />
                 {errors.author && <small className='text-red-500 mb-4 block'>{errors.author.message}</small>}
 
-                {/* Genre — required */}
                 <input
                     className='border-b border-gray-500 outline-0 p-3 block w-full mb-1 bg-transparent mt-4'
                     {...register("genre", { required: "Genre is required" })}
@@ -73,7 +62,6 @@ function AddBook() {
                 />
                 {errors.genre && <small className='text-red-500 mb-4 block'>{errors.genre.message}</small>}
 
-                {/* Year — required */}
                 <input
                     className='border-b border-gray-500 outline-0 p-3 block w-full mb-1 bg-transparent mt-4'
                     {...register("year", { required: "Year is required" })}

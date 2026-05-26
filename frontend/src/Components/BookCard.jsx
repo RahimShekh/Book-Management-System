@@ -10,7 +10,7 @@ function BookCard(props) {
     const { data, setData } = useContext(BookContext)
 
     const deleteBook = async () => {
-        await fetch(`http://localhost:3001/books/${id}`, { method: "DELETE" })
+        await fetch(`https://book-management-system-wrur.onrender.com/books/${id}`, { method: "DELETE" })
 
         const updatedList = data.filter(b => b.id != id)
         setData(updatedList)
@@ -34,16 +34,12 @@ function BookCard(props) {
                 <p className='text-sm text-gray-500'>Year: {year}</p>
 
                 <div className='flex gap-2 mt-4'>
-
-                    {/* Clicking Edit takes you to the edit page for this book */}
                     <Link
                         to={`/edit-book/${id}`}
                         className='flex-1 text-center bg-black text-white py-2 rounded-lg text-sm'
                     >
                         Edit
                     </Link>
-
-                    {/* Clicking Delete removes the book */}
                     <button
                         onClick={deleteBook}
                         className='flex-1 bg-red-500 text-white py-2 rounded-lg text-sm'
